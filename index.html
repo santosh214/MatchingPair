@@ -1,0 +1,106 @@
+<!DOCTYPE html >
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>js</title>
+                    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<style>
+    .custom:active{
+
+
+        background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+    }
+
+    /* meedia queries  */
+    @media only screen and (max-width: 600px) {
+   
+    h4{
+        font-size: small;
+    }
+    h2{
+        font-size: large;
+    }
+    }
+</style>
+                </head>
+                    <body class="bg-dark text-white">
+
+<!-- Problem introduction  -->
+<div class="mt-5 text-white p-5">
+    <h3 class="text-danger mb-5">1.Problem Introduction :-</h3>
+    <h4>Rohit works at a clothing store. He has a large pile of socks that he must pair by colour for sale.<br> Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.<br><br> For example, there are n=17 with color ar=[1,1,1,1,2,3,3,3,3,3,3,3,4,4,4,4,4] . There is two pair of color 1 , three of color 3 and two of color 4 . There are three odd socks left, one of color 2 , color 3 and color 4 . The number of pair is 7 . </h4>
+</div>
+
+
+
+
+                        <div class="mt-5 text-center bg-dark">
+                            <h2 class="mb-5">Enter Value To know How many pairs you have</h2>
+                            <label for="">Enter Value</label>
+                            <input type="text" id="inputBox">
+                            <br>
+                            <div class="mt-4 ">
+                                <button class="btn btn-success custom ml-2" onclick="add()">add</button>
+                                <button class="btn btn-primary custom ml-3" onclick="display()">display</button>
+                                <button class="btn btn-danger custom ml-3" onclick="result()">Result</button>
+
+                            </div>
+                                <p id="display" class="text-center font-weight-bold"></p>
+                                <h3 class="text-center mt-5 font-weight-bold text-danger" id="displayText"></h3>
+                                <h3 id="result" class="mt-5 text-info font-weight-bold "></h3>
+
+                            </div>
+
+<script>
+  var abc=[];
+
+function add(){
+
+ var ab=    document.getElementById("inputBox").value;
+ if(ab==""){
+     alert("ENTER VALUE PLEASE");
+ }   
+ else{
+ abc.push(ab);
+
+}
+}
+
+function display(){
+    var e="<hr>";
+    for(var x=0;x<abc.length;x++) {
+
+            let arrayValue=abc[x];
+            let arrayPosition=x+1;
+                e+="element "+ arrayPosition+" = " + arrayValue + "<br>";
+            
+            
+            
+    }
+    document.getElementById("display").innerHTML=e;
+}
+
+
+function result(){
+    var pair=0;
+    for(let z=0;z<abc.length-1;z++){
+        if(abc[z]==abc[z+1]){
+
+             pair=pair+1;
+                z++;
+        }
+        let ab="The Number Of Pair Is"
+        document.getElementById("displayText").innerHTML=ab;
+
+        document.getElementById("result").innerHTML=pair;
+    }
+
+}
+
+
+    </script>
+</body>
+</html>
